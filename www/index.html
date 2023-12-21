@@ -41,7 +41,7 @@
         }) 
     }
 
-        function searchPart() { 
+    function searchPart() { 
       let part = $("#part").val(); 
       let TestDataClass = ncmb.DataStore(db); 
       TestDataClass .equalTo("part", part).fetchAll() 
@@ -50,10 +50,19 @@
         }) 
     }
 
-            function searchPartLT() { 
+    function searchPartLT() { 
       let part = $("#part").val(); 
       let TestDataClass = ncmb.DataStore(db); 
       TestDataClass .greaterThan("part", part).fetchAll() 
+        .then(function(results) { 
+          showResults(results); 
+        }) 
+    }
+
+    function searchPower() { 
+      let power = $("#power").val(); 
+      let TestDataClass = ncmb.DataStore(db); 
+      TestDataClass .equalTo("power", power).fetchAll() 
         .then(function(results) { 
           showResults(results); 
         }) 
@@ -92,6 +101,10 @@
     <label for="part">part:</label>
     <input id="part" type="num" placeholder="part">
   </div>
+    <div>
+    <label for="power">power:</label>
+    <input id="power" type="text" placeholder="power">
+  </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button>
@@ -99,6 +112,8 @@
     <button class="btn" onclick="searchStand()">stand</button>
     <button class="btn" onclick="searchPart()">part</button>
     <button class="btn" onclick="searchPartLT()">part &lt;</button>
+    <br>
+    <button class="btn" onclick="searchPower()">power</button>
   </div>
   <div id="message">message area</div>
 </body>
