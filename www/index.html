@@ -41,6 +41,15 @@
         }) 
     }
 
+        function searchPart() { 
+      let part = $("#part").val(); 
+      let TestDataClass = ncmb.DataStore(db); 
+      TestDataClass .equalTo("part", part).fetchAll() 
+        .then(function(results) { 
+          showResults(results); 
+        }) 
+    }
+
     function showResults(results) {
       // テーブルのヘッダを生成
       let msg = "<table><tr><th>name</th><th>stand</th><th>part</th><th>power</th>";
