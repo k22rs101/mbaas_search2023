@@ -32,7 +32,7 @@
         }) 
     }
 
-    function searchLevel() { 
+    function searchStand() { 
       let stand = parseInt($("#stand").val()); 
       let TestDataClass = ncmb.DataStore(db); 
       TestDataClass .equalTo("stand", stand).fetchAll() 
@@ -72,7 +72,7 @@
   </div>
   <div>
     <label for="part">part:</label>
-    <input id="part" type="text" placeholder="part">
+    <input id="part" type="num" placeholder="part">
   </div>
   <div>
     <label for="power">power:</label>
@@ -82,8 +82,8 @@
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button>
     <br>
-    <button class="btn" onclick="searchStandLT()">stand &lt;</button>
     <button class="btn" onclick="searchStand()">stand</button>
+    <button class="btn" onclick="searchPartLT()">part &lt;</button>
   </div>
   <div id="message">message area</div>
 </body>
