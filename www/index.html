@@ -33,9 +33,9 @@
     }
 
     function searchStand() { 
-      let stand = parseInt($("#stand").val()); 
+      let stand = $("#stand").val(); 
       let TestDataClass = ncmb.DataStore(db); 
-      TestDataClass .equalTo("stand", stand).fetchAll() 
+      TestDataClass .regularExpressionTo("stand", stand).fetchAll() 
         .then(function(results) { 
           showResults(results); 
         }) 
