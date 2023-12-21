@@ -43,7 +43,7 @@
 
     function showResults(results) {
       // テーブルのヘッダを生成
-      let msg = "<table><tr><th>name</th><th>stand</th><th>part</th><th>defence</th></tr>";
+      let msg = "<table><tr><th>name</th><th>stand</th><th>part</th><th>power</th></tr></th><th>speed</th></tr>";
       for (let i = 0; i < results.length; i++) {
         // 各データを収めた表の列を生成
         msg += "<tr>";
@@ -70,6 +70,14 @@
   <div>
     <label for="stand">stand:</label>
     <input id="stand" type="text" placeholder="stand">
+  </div>
+  <div>
+    <label for="part">part:</label>
+    <input id="part" type="text" placeholder="part">
+  </div>
+  <div>
+    <label for="power">power:</label>
+    <input id="power" type="text" placeholder="power">
   </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
